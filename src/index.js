@@ -4,12 +4,20 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {BrowserRouter} from 'react-router-dom'
+import {Provider} from "react-redux"
+
+import store from "./redux/configureStore"
+
+import { ConnectedRouter } from 'connected-react-router'; //스토어 history 사용하려고
+import { history } from './redux/configureStore'; //스토어 history 사용하려고
 
 ReactDOM.render(
   // <React.StrictMode>
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>,
+  <Provider store={store}>
+    <ConnectedRouter history={history}>
+      <App />
+    </ConnectedRouter>
+  </Provider>,
   // </React.StrictMode>,
   document.getElementById('root')
 );
