@@ -27,7 +27,7 @@ Warp.defaultProps = {
   margin: false,
   bg: false,
   center: false,
-  _onClick: () => {}
+  // _onClick: () => {}
 };
 
 const GridBox = styled.div`

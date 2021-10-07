@@ -9,6 +9,7 @@ import { getCookie, setCookie, deleteCookie } from "../shared/Cookie";
 
 import { useDispatch } from "react-redux";
 import { actionCreators as userActions } from "../redux/modules/user";
+import { emailCheck } from "../shared/emailCheck";
 
 const Login = (props) => {
 	const dispatch = useDispatch();
@@ -21,6 +22,11 @@ const Login = (props) => {
 			window.alert("아이디 혹은 비밀번호가 공란입니다. 입력해주세요.")
 			return;
 		}
+
+		if(!emailCheck(id)){
+      window.alert("이메일 형식이 맞지 않습니다!");
+      return;
+    }
 
 		dispatch(userActions.loginFB(id, pwd)); //히스토리와 로그인 액션 사용하기
 }
