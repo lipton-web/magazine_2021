@@ -87,7 +87,10 @@ const Signup = (props) => {
 							<LockIcon />
 						</Grid>
 						<Grid item>
-							<TextField id="input-with-icon-grid" label="비밀번호 확인" type="password" onChange={e=>{setPwdCheck(e.target.value)}} />
+							<TextField id="input-with-icon-grid" label="비밀번호 확인" type="password" onChange={e=>{setPwdCheck(e.target.value)}}
+							onKeyPress={(e) => {if (e.key === "Enter") {
+								signup();
+							}}} />
 						</Grid>
 					</Grid>
 				</Warp>

@@ -73,7 +73,8 @@ const editPostFB = (post_id = null, post = {}) => {
     // 수정하려는 게시글 정보를 가져옵니다. (수정 전 정보겠죠!)
     const _post = getState().post.list[_post_idx];
     // 아래의 주석을 풀고 확인해보세요!
-    // console.log(_post);
+    console.log(_post);
+
 
     // 파이어스토어에서 콜렉션 선택하기
     const postDB = firestore.collection("post");
@@ -160,10 +161,11 @@ const addPostFB = (contents = "", layout_type = "a") => {
 
     // 이미지도 가져옵니다.
     const _image = getState().image.preview;
-
-    // 만약 이미지가 없으면? 경고를 띄워주고 업로드하지 않아요!
-    if (!_image) {
-      window.alert("이미지가 필요해요!");
+    const _contents = _post.contents; //내용가져오기
+    // console.log(_contents)
+    // 만약 이미지와 내용이 없으면? 경고를 띄워주고 업로드하지 않아요!
+    if (!_image || _contents==="") {
+      window.alert("이미지와 내용이 필요해요!");
       return;
     }
     // 이미지 업로드 먼저! (이미지 업로드가 실패하면 게시글도 업로드 하지 않게!)

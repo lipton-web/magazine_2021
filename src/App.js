@@ -17,6 +17,7 @@ import { actionCreators as userActions} from './redux/modules/user';
 import {apiKey} from "./shared/firebase"
 import PostWrite from './pages/PostWrite';
 import PostDetail from './pages/PostDetail';
+import Notification from './pages/Notification';
 
 function App() {
   const dispatch = useDispatch();
@@ -40,6 +41,7 @@ function App() {
         <Route path = "/write" exact component={PostWrite} />
         <Route path = "/write/:id" exact component={PostWrite} />
         <Route path = "/post/:id" exact component={PostDetail} />
+        <Route path = "/noti" exact component={Notification} />
       </Warp>
     </div>
   );

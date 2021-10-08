@@ -44,6 +44,7 @@ const PostWrite = (props) => {
 
 
 	const [contents, setContents] = React.useState(_post ? _post.contents : "");
+	// const [text, setText] = React.useState("");
 
 	React.useEffect(() => {
 		// 수정모드인데, 게시글 정보가 없으면? 경고를 띄우고 뒤로 가게 합니다.
@@ -63,13 +64,27 @@ const PostWrite = (props) => {
 		setContents(e.target.value);
 	}
 
+	// const findText = (e) => {
+	// 	setText(e.target.value);
+	// }
+
 //   게시글을 추가하는 함수
+
+
 	const addPost = () => {
+		// if(text === ""){
+		// 	window.alert("내용을 입력해주세요.")
+		// 	return;
+		// }
 		dispatch(postActions.addPostFB(contents, layout_type));
 	}
 
 	//   게시글을 수정하는 함수
 	const editPost = () => {
+		// 	if(text === ""){
+		// 	window.alert("내용을 입력해주세요.")
+		// 	return;
+		// }
 		dispatch(postActions.editPostFB(post_id, {contents: contents}));
 	}
 
@@ -94,22 +109,24 @@ const PostWrite = (props) => {
 
 	return (
 		<React.Fragment>
-			<Warp padding="16px">
-				<Text size="36px" bold> {is_edit ? "게시글 수정" : "게시글 작성"} </Text>
-				<Upload></Upload>
-
-			</Warp>
+			{/* <Warp padding="10px"> */}
+				{/* <Text size="30px" bold> {is_edit ? "게시글 수정" : "게시글 작성"} </Text> */}
+				{/* <Upload></Upload> */}
+			{/* </Warp> */}
 
 			<Warp>
-				<Warp padding="16px">
-					<Text margin="0px" size="24px" bold>미리보기</Text>
+				{/* <Text size="24px" bold> {is_edit ? "게시글 수정" : "게시글 작성"} </Text> */}
+				<Warp padding="16px" is_flex>
+					<Text margin="0px" size="24px" bold>{is_edit ? "게시글 수정 " : "게시글 작성"}</Text>
+					<Upload></Upload>
 				</Warp>
 				<Image shape="rectangle" src={preview ? preview : ''} />
 			</Warp>
 
 			<Warp padding="16px 16px 8px 16px">
 				<TextField onChange={changeContents} id="outlined-multiline-static" label="글 작성" value={contents}
-				multiline rows={3} placeholder="내용을 작성하세요" variant="outlined" style={{width:"90%"}}/>
+				multiline rows={3} placeholder="내용을 작성하세요" variant="outlined" style={{width:"90%"}} 
+				/>
 
 			</Warp>
 	

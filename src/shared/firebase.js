@@ -8,6 +8,7 @@ import firebase from "firebase/app";
 import "firebase/auth";
 import "firebase/firestore";
 import "firebase/storage";
+import "firebase/database";
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
@@ -31,5 +32,6 @@ const apiKey = firebaseConfig.apiKey;
 const auth = firebase.auth(); //인증만들기
 const firestore = firebase.firestore();
 const storage = firebase.storage();
+const realtime = firebase.database();
 
-export{auth, apiKey, firestore, storage};
+export{auth, apiKey, firestore, storage, realtime};

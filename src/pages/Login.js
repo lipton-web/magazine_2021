@@ -42,11 +42,15 @@ const Login = (props) => {
 			</Warp>
 
 			<Warp padding="16px 0px">
-				<TextField id="filled-basic" label="비밀번호" variant="filled" type="password" onChange={e => {setPwd(e.target.value)}} />
+				<TextField id="filled-basic" label="비밀번호" variant="filled" type="password" 
+				onChange={e => {setPwd(e.target.value)}} 
+				onKeyPress={(e) => {if (e.key === "Enter") {
+					login();
+				}}}/>
 			</Warp>
 
 			<Warp padding="16px 0px">
-				<Button variant="contained" style={{width:"200px", background:"#c5cae9"}} onClick={() => {login()}}>
+				<Button variant="contained" style={{width:"200px", background:"#c5cae9"}} onClick={() => {login()}} >
 					로그인
 				</Button>
 			</Warp>

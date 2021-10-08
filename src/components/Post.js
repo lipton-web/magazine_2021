@@ -1,6 +1,6 @@
 import React from "react";
 import { history } from "../redux/configureStore";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { actionCreators as postActions } from "../redux/modules/post";
 
 import Warp from "../elements/Warp";
@@ -29,9 +29,16 @@ import EditOutlinedIcon from '@material-ui/icons/EditOutlined';
 // id : 게시글 id
 // contents : 게시글 내용
 
-const Post = (props) => {
+const Post = React.memo((props) => {
 	const dispatch = useDispatch();
-//  console.log(props.layout_type)
+	// const post_list = useSelector((state) => state.post.list);
+  // const num = post_list[0].like_cnt
+	// console.log(num)
+
+	// React.useEffect(() => {
+	// 		dispatch(postActions.toggleLikeFB());
+	// }, []);
+
 	return (
 		<React.Fragment>
 			<Warp>
@@ -118,7 +125,7 @@ const Post = (props) => {
 			</Warp>
 		</React.Fragment>
 	)
-}
+})
 
 // 부모에서 프롭스 못받을때 오류나 화면 깨짐 방지
 Post.defaultProps = {

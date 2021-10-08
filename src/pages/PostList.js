@@ -58,52 +58,6 @@ const PostList = (props) => {
 			</Warp>
 		</React.Fragment>
 	)
-
-
-	// return (
-	// 	<React.Fragment>
-	// 		<Warp bg={"#EFF6FF"} padding="20px 0px">
-	// 			{/* <Post/> */}
-	// 			<InfinityScroll
-	// 				callNext={() => {
-	// 					dispatch(postActions.getPostFB(paging.next));
-	// 				}}
-  //         is_next={paging.next ? true : false}
-  //         loading={is_loading}
-	// 			>
-	// 				{post_list.map((p, idx) => {
-	// 					if (p.user_info.user_id === user_info?.uid) {
-	// 						return (
-	// 							<Warp
-	// 								bg="#ffffff"
-	// 								margin="8px 0px"
-	// 								key={p.id}
-	// 								_onClick={() => {
-	// 									history.push(`/post/${p.id}`);
-	// 								}}
-	// 							>
-	// 								<Post key={p.id} {...p} is_me />
-	// 							</Warp>
-	// 						);
-	// 					} else {
-	// 						return (
-	// 							<Warp
-	// 								key={p.id}
-	// 								bg="#ffffff"
-	// 								_onClick={() => {
-	// 									history.push(`/post/${p.id}`);
-	// 								}}
-	// 							>
-	// 								<Post {...p} />
-	// 							</Warp>
-	// 						);
-	// 					}
-	// 				})}
-	// 			</InfinityScroll>
-	// 		</Warp>
-	// 	</React.Fragment>
-	// );
-
 }
 
 export default PostList;
