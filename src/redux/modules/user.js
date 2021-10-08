@@ -67,6 +67,7 @@ const loginFB = (id, pwd) => {
 				var errorMessage = error.message;
 
 				console.log(errorCode, errorMessage);
+				window.alert("아이디 또는 비밀번호가 맞지 않습니다!");
 			});
 		});
 	}
@@ -100,6 +101,7 @@ const signupFB = (id, pwd, user_name) => {
 			var errorMessage = error.message;
 			
 			console.log(errorCode, errorMessage);
+			window.alert(errorCode, errorMessage)
 		});
 	}
 }

@@ -28,7 +28,6 @@ function App() {
     if(is_session){
       dispatch(userActions.loginCheckFB());
     }
-
   }, []);
 
   return (
@@ -39,6 +38,7 @@ function App() {
         <Route path = "/login" exact component={Login} />
         <Route path = "/signup" exact component={Signup} />
         <Route path = "/write" exact component={PostWrite} />
+        <Route path = "/write/:id" exact component={PostWrite} />
         <Route path = "/post/:id" exact component={PostDetail} />
       </Warp>
     </div>
